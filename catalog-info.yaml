@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cr7vosspw-nodejs-gitops
+  description: This is GitOps manifest for cr7vosspw-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=cr7vosspw-nodejs
+    backstage.io/kubernetes-id: cr7vosspw-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: cr7vosspw-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:cr7vosspw-nodejs
